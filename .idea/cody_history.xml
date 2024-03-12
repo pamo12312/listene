@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChatHistory">
+    <chats>
+      <list>
+        <chat>
+          <accountId value="VXNlcjoyNzkzNDM=" />
+          <internalId value="b61ef2fc-c2f0-4cd3-95c7-52ad0c31d03b" />
+        </chat>
+        <chat>
+          <accountId value="VXNlcjoyNzkzNDM=" />
+          <internalId value="9164185b-eb8c-40e8-b691-96ade1a046b4" />
+          <messages>
+            <list>
+              <message>
+                <speaker value="HUMAN" />
+                <text value="oprav kod aby to fungovalo na enter" />
+              </message>
+              <message>
+                <speaker value="ASSISTANT" />
+                <text value=" Tu je možná úprava kódu, aby reagoval na stlačenie klávesy Enter namiesto tlačidla:&#10;&#10;```python&#10;import tkinter as tk&#10;&#10;def hello():&#10;    print(&quot;Ahoj svet!&quot;) &#10;&#10;root = tk.Tk()&#10;&#10;button = tk.Button(root, text=&quot;Klikni na mňa&quot;, command=hello) &#10;button.pack()&#10;&#10;root.bind(&quot;&lt;Return&gt;&quot;, lambda event: hello()) &#10;&#10;root.mainloop()&#10;```&#10;&#10;Hlavné zmeny:&#10;&#10;- Pridal som volanie `root.bind(&quot;&lt;Return&gt;&quot;, lambda event: hello())` aby zavolalo funkciu `hello()` pri stlačení klávesy Enter. &#10;&#10;- Namiesto priradenia funkcie `hello` na `command` tlačidla, volám funkciu `hello()` priamo v lambda funkcii.&#10;&#10;- Odstránil som volanie `button.pack()`, keďže už nepotrebujeme tlačidlo.&#10;&#10;Takto by malo fungovať spúšťanie funkcie `hello()` po stlačení Enter namiesto kliknutia na tlačidlo." />
+              </message>
+            </list>
+          </messages>
+          <updatedAt value="2024-02-19T14:43:19.943719" />
+        </chat>
+        <chat>
+          <accountId value="VXNlcjoyNzkzNDM=" />
+          <internalId value="41861bac-ccd8-4a07-92fe-748c74738e2a" />
+          <messages>
+            <list>
+              <message>
+                <speaker value="HUMAN" />
+                <text value="// Vygenerování náhodného čísla, které hráč bude hádat&#10;let secretNumber = Math.floor(Math.random() * 100) + 1;&#10;&#10;// Reference na HTML elementy&#10;const guessInput = document.getElementById('guessInput');&#10;const guessButton = document.getElementById('guessButton');&#10;const feedback = document.getElementById('feedback');&#10;const newGameButton = document.getElementById('newGameButton'); // Přidáno pro nové tlačítko&#10;&#10;// Funkce pro kontrolu tipu hráče&#10;function checkGuess() {&#10;    const userGuess = Number(guessInput.value);&#10;    if (userGuess &amp;lt; 1 || userGuess &amp;gt; 100) {&#10;        feedback.textContent = 'Prosím, zadej číslo mezi 1 a 100.';&#10;    } else if (userGuess === secretNumber) {&#10;        feedback.textContent = 'Gratuluji! Uhádl jsi správně!';&#10;        endGame();&#10;    } else if (userGuess &amp;lt; secretNumber) {&#10;        feedback.textContent = 'Tip je příliš nízký. Zkus to znovu.';&#10;    } else if (userGuess &amp;gt; secretNumber) {&#10;        feedback.textContent = 'Tip je příliš vysoký. Zkus to znovu.';&#10;    }&#10;}&#10;&#10;// Funkce pro ukončení hry a možnost začít novou hru&#10;function endGame() {&#10;    guessInput.disabled = true;&#10;    guessButton.disabled = true;&#10;    newGameButton.style.display = 'block';&#10;}&#10;&#10;// Funkce pro resetování hry a začátek nové hry&#10;function resetGame() {&#10;    secretNumber = Math.floor(Math.random() * 100) + 1;&#10;    feedback.textContent = '';&#10;    guessInput.disabled = false;&#10;    guessButton.disabled = false;&#10;    guessInput.value = '';&#10;    guessInput.focus();&#10;    newGameButton.style.display = 'none';&#10;}&#10;&#10;// Event listeners&#10;guessButton.addEventListener('click', checkGuess);&#10;newGameButton.addEventListener('click', resetGame);&#10;&#10;// Přidání posluchače události pro stisknutí klávesy Enter&#10;guessInput.addEventListener('keypress', function(event) {&#10;    if (event.key === 'Enter') {&#10;        checkGuess();&#10;    }&#10;});&#10;&#10;// Inicializace nové hry při načtení stránky&#10;resetGame(); uprav kod aby to fungovalo na enter" />
+              </message>
+              <message>
+                <speaker value="ASSISTANT" />
+                <text value=" Tady je upravený kód, aby fungoval po stisknutí klávesy Enter:&#10;&#10;```js&#10;// Vygenerování náhodného čísla, které hráč bude hádat&#10;let secretNumber = Math.floor(Math.random() * 100) + 1;&#10;&#10;// Reference na HTML elementy&#10;const guessInput = document.getElementById('guessInput');&#10;const guessButton = document.getElementById('guessButton');&#10;const feedback = document.getElementById('feedback');&#10;const newGameButton = document.getElementById('newGameButton');&#10;&#10;// Funkce pro kontrolu tipu hráče &#10;function checkGuess() {&#10;  const userGuess = Number(guessInput.value);&#10;  if (userGuess &lt; 1 || userGuess &gt; 100) {&#10;    feedback.textContent = 'Prosím, zadej číslo mezi 1 a 100.';&#10;  } else if (userGuess === secretNumber) {&#10;    feedback.textContent = 'Gratuluji! Uhádl jsi správně!';&#10;    endGame();&#10;  } else if (userGuess &lt; secretNumber) {&#10;    feedback.textContent = 'Tip je příliš nízký. Zkus to znovu.';&#10;  } else if (userGuess &gt; secretNumber) {&#10;    feedback.textContent = 'Tip je příliš vysoký. Zkus to znovu.';&#10;  }&#10;}&#10;&#10;// Funkce pro ukončení hry  &#10;function endGame() {&#10;  guessInput.disabled = true;&#10;  guessButton.disabled = true;&#10;  newGameButton.style.display = 'block';&#10;}&#10;&#10;// Funkce pro reset hry&#10;function resetGame() {&#10;  // generování nového čísla&#10;  secretNumber = Math.floor(Math.random() * 100) + 1;&#10;  &#10;  // reset elementů&#10;  feedback.textContent = '';&#10;  guessInput.disabled = false;&#10;  guessButton.disabled = false;&#10;  guessInput.value = '';&#10;  guessInput.focus();&#10;  newGameButton.style.display = 'none';&#10;}&#10;&#10;// Event listenery&#10;guessButton.addEventListener('click', checkGuess);&#10;newGameButton.addEventListener('click', resetGame);&#10;&#10;// Přidání posluchače pro Enter&#10;document.addEventListener('keyup', function(e) {&#10;  if (e.key === 'Enter') {&#10;    checkGuess();&#10;  }&#10;});&#10;&#10;// Reset hry na začátku&#10;resetGame();&#10;```&#10;&#10;Hlavní změna je přidání posluchače události `keyup` na celý dokument, který volá funkci `checkGuess()` při stisknutí klávesy Enter." />
+              </message>
+            </list>
+          </messages>
+          <updatedAt value="2024-02-19T14:44:02.822612" />
+        </chat>
+        <chat>
+          <accountId value="VXNlcjoyNzkzNDM=" />
+          <internalId value="8eddd71c-ea80-4d03-a1f7-863a10c7fe85" />
+        </chat>
+      </list>
+    </chats>
+  </component>
+</project>
